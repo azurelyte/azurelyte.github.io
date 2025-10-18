@@ -4,11 +4,10 @@
 
 layout: default
 title: "ROOT"
-permalink: /index/
+permalink: /
 ---
 <!-- 
-Index is the place for the home page but, since I don't have a blog or much content, let's just redirect and use the About page as 
-our landing page.
+ROOT should never be accessed by the user. We would normally redirect to the index/home page, but we will use the about page for now.
 -->
 <meta http-equiv="refresh" content="0; url=/about/" />
 <script type="text/javascript">

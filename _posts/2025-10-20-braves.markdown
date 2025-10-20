@@ -1,0 +1,36 @@
+---
+layout: default
+title:  "Braves (2025)"
+date:   2025-10-20 00:00:00 -0000
+categories: projects
+permalink: /posts/braves/
+---
+<style>
+div.scroll-container {
+  overflow: auto;
+  color:#ffffffac;
+  white-space: nowrap;
+  height:900px;
+}
+div.scroll-container img {
+  height:90%;
+}
+</style>
+<iframe width="100%" height="400" src="https://youtube.com/embed/S8YJPGOaBJ4?si=RIcH0wUYImfi-LqA&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+An original pokemon inspired IP for a 4X mobile game focused around base building, active gameplay, auto-chess like gameplay, and resource management.
+
+Contributions: Gameplay/Software programmer primarily working on the base building game loop, the many small features associated with those buidlings, and the store pages. 
+
+Studio: <a href="https://www.emeraldcitygames.ca/">Emerald City Games</a>
+
+Platform: IOS/Android
+
+Engine & Tools: Unity, proprietary gameplay drivin data systems.
+
+<div class="scroll-container">
+  <img src="/assets/images/braves/Braves_Base.jpg" alt="">
+  <img src="/assets/images/braves/Braves_Battle.jpg" alt="">
+  <img src="/assets/images/braves/Braves_Base_CometCore.jpg" alt="">
+  <img src="/assets/images/braves/Braves_Dailies.jpg" alt="">
+</div>

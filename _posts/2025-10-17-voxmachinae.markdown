@@ -12,6 +12,7 @@ div.scroll-container {
 }
 
 div.scroll-container img {
+  color:#ffffffac;
   padding: 10px;
 }
 </style>
@@ -26,7 +27,7 @@ Studio: <a href="http://www.space-bullet.com/">Space Bullet Dynamics Corporation
 Platform: <a href="https://store.steampowered.com/app/334540/Vox_Machinae/">Steam PC/VR</a>, <a href="https://www.meta.com/experiences/vox-machinae/1968697563211639/?srsltid=AfmBOooLgfds1kYONw0X2esI_7243vFpVbCz2X-Xe7dD8hLGoepr3Dz6">Meta Quest</a>
 
 Reception: <a href = "https://www.metacritic.com/game/vox-machinae/">Metacritic</a> 8.5 User Score,
-<a href="https://www.pcgamer.com/vr-mech-game-vox-machinae/">PC Gamer</a> (2019) - <i>"The Best mech action game on PC right now"</i>,
+<a href="https://www.pcgamer.com/vr-mech-game-vox-machinae/">PC Gamer</a> (2019) - *<i>"The Best mech action game on PC right now"</i>*,
 <a href="https://www.impulsegamer.com/vox-machinae-quest-2-review/">Impulse Gamer</a> (2022) - 4.5/5
 
 Engine & Tools: Unity, custom PhysX implementation, proprietary scripting system, Wwise.

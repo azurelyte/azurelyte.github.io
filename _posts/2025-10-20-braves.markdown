@@ -20,7 +20,7 @@ div.scroll-container img {
 
 An original pokemon inspired IP for a 4X mobile game focused around base building, active gameplay, auto-chess like gameplay, and resource management.
 
-Contributions: Gameplay/Software programmer primarily working on the base building game loop, the many small features associated with those buidlings, and the store pages. 
+Contributions: Gameplay/Software programmer primarily working on the base building game loop, the many small features associated with those buildings, and the store pages. 
 
 Studio: <a href="https://www.emeraldcitygames.ca/">Emerald City Games</a>
 

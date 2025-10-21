@@ -43,5 +43,5 @@ input[type=submit]:hover {
 </style>
 Please email me at: **jaredgraypublic@gmail.com**
 <p><small>
-Please note, if you are solicitating your own product, service, or are trying to sell me something, you will not receive a response. If your product is good I will find you. I am happy to confer with professionals and answer the questions of inquisitive minds.
+Please note, if you are soliciting  your own product, service, or are trying to sell me something, you will not receive a response. If your product is good I will find you. I am happy to confer with professionals, recruiters, and answer the questions of inquisitive minds.
 </small></p>

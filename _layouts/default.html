@@ -84,9 +84,12 @@ a.linkheader {
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        <!-- Original uses github username. Might want that if making open source stuff in the future but, for now, use actual name instead. -->
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">Jared Gray</a></p>
+        <!-- <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p> -->
         {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <!-- Don't need -->
+        <!-- <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
       </footer>
     </div>
   </body>

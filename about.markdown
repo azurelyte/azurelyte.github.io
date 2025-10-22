@@ -10,4 +10,4 @@ Creating exceptional game experiences that bring joy and entertainment to people
 
 I have a background in Computer Science/Programming and a successful history of working on Designing Game Features, Scripting, Network/Multithreaded Programming, Texture/Build Pipelines, and VR.
 
-![Image]({{ site.baseurl }}/assets/images/self.png)
+<img src="/assets/images/self.png" alt="" style="width:100%">

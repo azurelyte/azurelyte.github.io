@@ -15,9 +15,11 @@ div.scroll-container img {
   padding: 10px;
 }
 </style>
+# Vox Machinae
+---
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/4qcfpOElmII?si=uWkf8ztunnWONbO4&autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-An 80's inspired virtual reality multiplayer mech shooter that features a single player campaign and weighty combat.
+Vox Machinae is a 80's inspired virtual reality multiplayer mech shooter that features a single player campaign and weighty combat.
 
 Contributions: Gameplay and Principal programmer in a small indie team of 6. Worked across disciplines to design and program gameplay features, engine tools, and pipelines. Developed, reworked, and shipped various game modes.
 

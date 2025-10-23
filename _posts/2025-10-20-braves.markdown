@@ -49,13 +49,13 @@ Engine & Tools: Unity, proprietary gameplay drivin data systems.
 
 # Summary of Contributions
 
-On this project I was primarily responsible for the base building aspect of Braves. Initially my work started with modifying ECG's code base from *Vikings: Valhalla*. The code proved to be unsuitable for expanded use in a highly scalable environment which manifested in a complete rewrite of the system. 
+On this project, I was primarily responsible for the base building aspect of Braves. Initially, my work started with modifying ECG’s code base from *Vikings: Valhalla*. The code proved to be unsuitable for expanded use in a highly scalable environment, which manifested in a complete rewrite of the system.
 
-Additionally, every system, every feature, was completely data driven. In other words, spread sheets were created and compiled into proprietary runtime formats that could be packaged with the game or be fetched from a server on application launch to drive gameplay. For example, all the damage values of attacks or the amount of resources generated from a particular building were all part of data sheets. These data sheets were also documented and provided to designers and needed to be readable by people that were less technically inclined. I found that taking the time to explain and document in the simplest terms possible on what columns in these data sheets did dramatically reduced the confusion from the design teams. Which in turn dramatically increased productivity and reduced the amount of time I had to spend explaining how a thing works to another person. *I wish more **programmers** took the time to invest into **properly documenting** their systems with the INTENDED audience in mind.*
+Additionally, every system, every feature, was completely data-driven. In other words, spreadsheets were created and compiled into proprietary runtime formats that could be packaged with the game or be fetched from a server on application launch to drive gameplay. For example, all the damage values of attacks or the amount of resources generated from a particular building were all part of data sheets. These data sheets were also documented and provided to designers, and needed to be readable by people who were less technically inclined. I found that taking the time to explain and document in the simplest terms possible on what columns in these data sheets did dramatically reduced the confusion from the design teams. This dramatically increased productivity and reduced the amount of time I had to spend explaining how a thing works to another person. I wish more **programmers** took the time to invest in **properly documenting** their systems with the **intended** audience in mind.
 
-My role quickly evolved into a senior level position as I continued to effectively mentor and communicate across disciplines while working on critical systems within the Braves codebase. My duty's grew to include project planning and time estimations. I would continue to document and clean up code by reducing complexity and mentoring other less experienced team members. Some of which had never worked within the games industry. I would also go on to document various data sheets and bring design teams up to speed on other programmers' work. Sometimes reading through code on the spot during meetings to get design members up to speed.
+My role quickly evolved into a senior-level position as I continued to effectively mentor and communicate across disciplines while working on critical systems within the Braves codebase. My duties grew to include project planning and time estimations. I would continue to document and clean up code by reducing complexity and mentoring other less-experienced team members. Some of whom had never worked within the games industry. I would also go on to document various data sheets and bring design teams up to speed on other programmers’ work. Sometimes, reading through code on the spot during meetings to get designers up to speed.
 
-Despite my best efforts at the end of August 2025 the studio would report to have run out of funding and lay off the entire studio. Being the reasonable type, I and a few select others would put some additional time into the project in an attempt to capture further funding by request of the ECG executives. Although the project would get enough work done to reach the milestone requirements of the publisher for more funding it would appear that business relations were souring. At the time of writing Braves remains in a state uncertainty. I hope that the studio is able to find the funding required to pull through and launch Braves to a wider audience.
+Despite my best efforts at the end of August 2025, the studio would report having run out of funding and proceeded to lay off the entire studio. Being the reasonable type, a few select others and I would put some additional time into the project in an attempt to capture further funding by request of the ECG executives. Although the project would get enough work done to reach the milestone requirements of the publisher for more funding, it would appear that business relations were souring. At the time of writing Braves remains in a state of uncertainty. I hope that the studio is able to find the funding required to pull through and launch Braves to a wider audience.
 
 <h3>Gallery</h3>
 <div class="scroll-container">
@@ -73,74 +73,89 @@ WARNING: LOTS OF TEXT
 
 ### Preface
 
-As alluded to above, Braves was not a commercial success. Failing to be delivered on time and will, potentially, never be shipped at all. As such I think it would be useful to do a *post mortem* on why that is the case.
+As alluded to above, Braves was not a commercial success. Failing to be delivered on time and will, potentially, never be shipped at all. As such, I think it would be useful to do a *post-mortem* on why that is the case.
 
-Just in case you don't know, in software development a *post mortem* is where a team (though in this case myself) reflects on what went wrong with something they or an organization did and documents what went wrong and how to prevent that from occurring in the future. A *post mortem* is not about assigning blame to individuals or teams. It is aimed at preventing people from making repeated mistakes and striving towards creating the best software possible.
+Just in case you don’t know, in software development, a *post mortem* is where a team (though in this case myself) reflects on what went wrong with something they or an organization did and documents what went wrong and how to prevent that from occurring in the future. A post mortem is not about assigning blame to individuals or teams. It is aimed at preventing people from making repeated mistakes and striving towards creating the best software possible.
 
-Typically a post mortem will follow a template of; **what happened**, **when did it happen**, **who owns it** (Which is who will do the analysis, though in this case it will be me), **lessons learned**, and **actionable items/resolutions** (often with a timeline attached to help with planning on executing these items).
+Typically, a post mortem will follow a template of: **what happened**, **when it happened**, **who owns it** (Which is who will do the analysis, though in this case it will be me), **lessons learned**, and **actionable items/resolutions** (often with a timeline attached to help with planning on executing these items).
 
-**Disclaimer:** Before I hop into the meat of the post mortem I do believe it necessary to declare that I operate in good faith and that I am no longer employed by ECG. At no point was I required to sign an NDA. However as a matter of professionalism I will not reveal company internals and, to the best of my ability, refrain from providing information that may single out any individuals. If you worked with ECG in any capacity and believe that I have violated your privacy, please reach out to me by email at *jaredgraypublic@gmail.com* for a resolution. I also check in with the internal communication tools from time to time, and you may reach out to me there as well.
+**Disclaimer**: Before I hop into the meat of the post-mortem, I do believe it is necessary to declare that I operate in good faith and that I am no longer employed by ECG. At no point was I required to sign an NDA. However, as a matter of professionalism, I will not reveal company internals and, to the best of my ability, refrain from providing information that may single out any individuals. If you worked with ECG in any capacity and believe that I have violated your privacy, please reach out to me by email at jaredgraypublic@gmail.com for a resolution. I also check in with the internal communication tools from time to time, and you may reach out to me there as well.
 
-Now with all that out of the way. There are many many individual things to do post mortems on. **Click/tap** on the ones you find yourself interested in. :)
+Now with all that out of the way. There are many individual things to do post-mortems on. **Click/tap** on the ones you find yourself interested in. :)
 
 <!-- Scope -->
 <details markdown="1">
   <summary class="summary-header">Scope <summarysmall>(Click to reveal)</summarysmall></summary>
   <h4>What Went Wrong?</h4>
-  <p>
-  The scope of Braves was criminally mis-understood. The game was intended to be completed on an 8 month timeline with a plethera of features inspired and equivilent to <a href="https://www.lastwar.com/en/home.html?1758595519518">Last War</a> and <a href="https://activity-afkjourney.farlightgames.com/GW-I2505031/">AFK Journey</a>. These are games made by studios with 50-200 employees with greater timelines. 8 months was incredibly ambitious for a team of roughly 16. With the resources availible and with the hindsight of knowing the true timeline it is clear that the project required more time, money, and manpower to complete.
-  </p>
-  <p>
-  Also, the <a href="https://en.wikipedia.org/wiki/Game_design_document">Game Design Document (GDD)</a> was not nearly complete enough to be actioned on. It is true that a GDD is a document which changes over the course of a project. In the case of Braves the GDD did not fullfill the requirements of the contract and lead various teams a-stray. It also had contradictions and did not explain exactly what was needed.
-  </p>
+  
+  The scope of Braves was criminally misunderstood. The game was intended to be completed within an 8-month timeline, featuring a plethora of features inspired by and equivalent to <a href="https://www.lastwar.com/en/home.html?1758595519518">Last War</a> and <a href="https://activity-afkjourney.farlightgames.com/GW-I2505031/">AFK Journey</a>. These are games made by studios with 50-200 employees and far longer timelines. 8 months was incredibly ambitious for a team of roughly 16. With the resources available and with the hindsight of knowing the true timeline, it is clear that the project required more time, money, and manpower to complete.
+
+  Also, the <a href="https://en.wikipedia.org/wiki/Game_design_document">Game Design Document (GDD)</a> was not nearly complete enough to be actioned on. A GDD is a document which changes over the course of a project. In the case of Braves, the GDD did not fulfill the requirements of the contract and led various teams astray. It also had contradictions and did not explain exactly what was needed.
+  
   <h4>When did it Happen?</h4>
-  <p>At the beginning of the project prior to pulling the production trigger.</p>
-  <h4>Lessions learned?</h4>
-  <ul>
-    <li>More features means a larger scope. Larger scopes means more complexity. More complexity requires more resources and more planning.</li>
-    <li>A GDD that does not fulfill publisher requirements and/or is not complete or ambiguous will cause a great deal of time to be wasted. Teams will work towards differing goals and work done will often be lost or thrown aside as a result.</li>
-  </ul>
+  
+  At the beginning of the project, prior to pulling the production trigger.
+  
+  <h4>Lessons learned?</h4>
+
+  - More features mean a larger scope. Larger scopes mean more complexity. More complexity requires more resources and more planning.
+  - A GDD that does not fulfill publisher requirements and/or is not complete or ambiguous will cause a great deal of time to be wasted. Teams will work towards differing goals, and work done will often be lost or thrown aside as a result.
+
   <h4>Resolutions</h4>
-  <p>Braves is missing a <strong>Game Treatment</strong>. In my experience successfull games typically have a Game Treatment that accompanies a GDD as part of the green lighting process. I really see the GDD as a High Level Design Document that provides a guiding light and the treatment as the blueprint on how the game is going to get done. Some say a treatment should be short, others long. In my opinion a good game treatment should step through each game feature in detail. For each feature it must:</p>
-  <ul>
-    <li>Describe the feature and how it will be used.</li>
-    <li>List the tools to used.</li>
-    <li>List the tools that need to be created.</li>
-    <li>List all the dependencies for a the feature. This includes other systems, features, backend infrastructure, etc..</li>
-    <li>List what diciplines are involved.</li>
-  </ul>
-  <p>After making a treatment it will be much easier to scope the project and get an idea for how feasible the game is to create. It should also be more obvious how long each feature will take in addition to identifying the riskiest parts of the project. Most importantly it helps you get realistic.</p>
+  
+  Braves is missing a **Game Treatment**. In my experience, successful games typically have a Game Treatment that accompanies a GDD as part of the green lighting process. I really see the GDD as a High Level Design Document that provides a guiding light and the treatment as the blueprint on how the game is going to get done. Some say a treatment should be short, others long. In my opinion, a good game treatment should step through each game feature in detail. For each feature, it must:
+  
+  - Describe the feature and how it will be used.
+  - List the tools to be used.
+  - List the tools that need to be created.
+  - List all the dependencies for the feature. This includes other systems, features, backend infrastructure, etc..
+  - List what disciplines are involved.
+  
+  After making a treatment, it will be much easier to scope the project and get an idea of how feasible the game is to create. It should also be more obvious how long each feature will take, in addition to identifying the riskiest parts of the project. Most importantly, it helps you get realistic.
 </details>
 
 <!-- Technical Documentation -->
 <details markdown="1">
   <summary class="summary-header">Technical Documentation <summarysmall>(Click to reveal)</summarysmall></summary>
   <h4>What Went Wrong?</h4>
-  <p>Simply put, very few people wrote documentation.</p>
+  
+  Simply put, very few people wrote documentation.
+  
   <h4>When did it Happen?</h4>
-  <p>Prior to starting the project in the existing code base that was used as a foundation, it lacked any form of technical documentation what so ever. Work done on the code base during Braves did include technical documentation but was provided by few programmers and was not a pattern that was enforced by policy.</p>
+  
+  Before starting the project. Specifically, the code base used as a foundation. It lacked any form of technical documentation whatsoever. Work done on the code base during Braves did include technical documentation, but it was provided by a few programmers and was not a pattern that was enforced by policy.
+  
   <h4>Who owns it?</h4>
-  <p>The entire code team.</p>
-  <h4>Lessions learned?</h4>
-  <ul>
-    <li>A lack of documentation means a world of headaches later. The human mind is not perfect and recalling the intent and steps of complex processes from is not a sustainible way to ensure the longevity of a system.</li>
-    <li>No documentation can often mean understanding a system to make a few edits takes just as long to re-write from the ground up.</li>
-    <li>It is difficult to track down changes in versioning software without adaquate logs/commit comments.</li>
-    <li>The future programmers will thank you.</li>
-  </ul>
+  
+  The entire code team.
+
+  <h4>Lessons learned?</h4>
+  
+  - A lack of documentation means a world of headaches later. The human mind is not perfect, and recalling the intent and steps of complex processes from is not a sustainable way to ensure the longevity of a system.
+  - No documentation can often mean that understanding a system to make a few edits takes just as long as rewriting it from the ground up.
+  - It is difficult to track down changes in versioning software without adequate logs/commit comments.
+  - The future programmers will thank you.
+
   <h4>Resolutions</h4>
-  <p>It should be a company policy to properly document ones work in code and in intermediate formats anywhere a designer or other person is likely to make changes. For things like versioning software and releases it should be required to write patch notes or logs of what changes have occured.</p>
+
+  It should be a company policy to properly document your work in code and in intermediate formats, anywhere a designer or other person is likely to make changes. For things like versioning software and releases, it should be required to write patch notes or logs of what changes have occurred.
+
+  When new tasks are created, the programmer/person creating the timeline for a task should include documentation as a factor when determining task duration.
+  
+  If a project is severely out of date with documentation or lacks it entirely, a good strategy to eliminate both tech debt and documentation woes is to dedicate a fixed period of time each day towards improving it. Adding some time onto tasks to make room for this at the end of a workday is a way to evenly distribute that workload over a period of time.
+  
   <h4>Personal Remarks</h4>
-  As a professional I make every effort when programming to ensure that the code I write is error free and understandable. This includes documentation both in and outside of code. I advocated for better documentation on Braves but fear it fell on deaf ears. Or perhaps I needed to make a greater push for it. Regardless, I wish to give an examples of good documentation from Braves. Let's take this function call.
+
+  As a professional, I make every effort when programming to ensure that the code I write is error-free and understandable. This includes documentation both in and outside of code. I advocated for better documentation on Braves, but fear it fell on deaf ears. Or perhaps I needed to make a greater push for it. Regardless, I wish to give an example of good documentation from Braves. Let’s take this function call.
 
 ```c#
 private bool CanUpgrade(out ECheckUpgradeMask detailedResult, 
                         ECheckUpgradeMask mask = ECheckUpgradeMask.MaskAll)
 ```
 
-  This function is part of a building. It's easy to infer just by looking that it allows you to check whether or not a building is upgradable. But there are a couple arguments that don't make sense at first glance. Why do you need a detailed result? Shouldn't it just be true or false? And what the heck do I need a mask for anyways?
+  This function is part of a building. It’s easy to infer just by looking that it allows you to check whether or not a building is upgradable. But there are a couple of arguments that don’t make sense at first glance. Why do you need a detailed result? Shouldn’t it just be true or false? And what the heck do I need a mask for anyway?
   
-  As a developer that cares about who reads my code, I think that **THE MOST IMPORTANT** reason you have comments and technical documentation is to confer the **INTENT** of a system or given piece of code. Given the context of the comments/summary around the code it becomes plainly obvious on how it's ment to be used.
+  As a developer that cares about who reads my code, I think that **THE MOST IMPORTANT** reason you have comments and technical documentation is to convey the **INTENT** of a system or given piece of code. Given the context of the comments/summary around the code, it becomes plain how it’s meant to be used.
 
 ```c#
 /// <summary>
@@ -155,8 +170,8 @@ private bool CanUpgrade(out ECheckUpgradeMask detailedResult,
 /// </param>
 /// <param name="mask">
 /// Optional mask to specify which checks you want to preform. Sometimes, UI will 
-/// only want to check specific relevent things. <br></br>E.g. would this be 
-/// upgradable excluding building costs? (Usefull when using premium currencey
+/// only want to check specific relevant things. <br></br>E.g. would this be 
+/// upgradable excluding building costs? (Useful when using premium currencey 
 /// instead of normal costs)
 /// </param>
 /// <returns>
@@ -167,12 +182,14 @@ private bool CanUpgrade(out ECheckUpgradeMask detailedResult,
                         ECheckUpgradeMask mask = ECheckUpgradeMask.MaskAll)
 ```
 
-  Reading the comments we now know that our original assumption of true meaning it can be upgraded and false meaning it cannot is correct. But we can also use the mask to narrow down our query, which might be usefull. We also get a reason why an upgrade is not doable when the *detailedResult* is not *None*. Moving onto the mask portion of this, we might ask why is the default *MaskAll*? Well because I care about who reads this we can inspect the definition of *ECheckUpgradeMask* and find out that...
+  Reading the comments, we now know that our original assumption is correct, where true means it can be upgraded and false means that it cannot. But we can also use the mask to narrow down our query, which might be useful. We also get a reason why an upgrade is not doable when the *detailedResult* is not *None*. Moving on to the mask portion of this, we might ask why the default value for '*mask*' is *MaskAll?*
+  
+  Well, because I care about who reads this we can inspect the definition of ECheckUpgradeMask and find out that…
 
 ```c#
 /// <summary>
 /// Enum mask for <see cref="CanUpgrade"/> which allows you to make precise checks
-/// based on your senario. Typical senarios such as:<br></br>
+/// based on your scenario. Typical scenarios such as:<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskAll"/>,<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskInstant"/>,<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskRush"/><br></br>
@@ -180,7 +197,7 @@ private bool CanUpgrade(out ECheckUpgradeMask detailedResult,
 /// </summary>
 public enum ECheckUpgradeMask : int
 {
-	Unknown = -1, // unchecked (int)0XFFFFFFFF,
+	Unknown = -1,
 	None = 0b0,
 	/// <summary>CanUpgrade returns false when the upgrade queue is at capacity.</summary>
 	ConstructionQueueFull = 0b1,
@@ -196,7 +213,7 @@ public enum ECheckUpgradeMask : int
 	BuildingCost = 0b100000,
 	/// <summary>
 	/// CanUpgrade returns false when the user does not have enough hard currency to instantly complete the building.
-	/// This does accomidate the factional cost of hard currency as an upgrade is occuring.
+	/// This does accommodate the factional cost of hard currency as an upgrade is occuring.
 	/// </summary>
 	PremiumCost = 0b1000000,
 	/// <summary>CanUpgrade returns false when the building is not in the None or Rubble state.</summary>
@@ -216,17 +233,17 @@ public enum ECheckUpgradeMask : int
 }
  ```
 
-  Not only do the comments around the masks and bitmask portions tell you exactly what they're meant to do but, they also use references to other data structures and functions. There are useful to other programmers because they can use a **Find All References/Find Signature** refactoring operation in their <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to see the code that is being refered to by the comment.
+  Not only do the comments around the masks and bitmask portions tell you exactly what they’re meant to do, but they also use references to other data structures and functions. They are useful to other programmers because they can use a **Find All References/Find Signature** refactoring operation in their <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to see the code that is being referred to by the comment.
 
-  Good documentation makes it easy to understand the intent of the author AND provides the information nessesary to change it. All that to say it should be plainly obvious to other programmers that...
+  Good documentation makes it easy to understand the intent of the author AND provides the information necessary to change it. All that to say it should be plainly obvious to other programmers that…
 
 ```c#
 if (building.CanUpgrade(out _, ECheckUpgradeMask.PremiumCost)) { ... }
 ```
 
-  ...is checking to see if a building is upgradable with ONLY the games premium currencey and is ignoring any other game state factors.
+  …is checking to see if a building is upgradable with ONLY the game’s premium currency and is ignoring any other game state factors.
 
-  Oh and as one final note you might've seen that the can upgrade call is private. That's because there is a...
+  Oh, and as one final note, you might’ve seen that the CanUpgrade call is private. That’s because there is a…
 
 ```c#
 public bool CanUpgrade(out ECheckUpgradeMask detailedResult, 
@@ -234,65 +251,43 @@ public bool CanUpgrade(out ECheckUpgradeMask detailedResult,
                       bool logFailures = true)
 ```
 
-...function that wraps the call which prints a warning on development builds to the console to inform programmers/designers of when an upgrade fails, which building it failed on, and for what reason. Isn't that nice?
-</details>
-
-<!-- System Communication -->
-<details markdown="1">
-  <summary class="summary-header">System Communication <summarysmall>(Click to reveal)</summarysmall></summary>
-  <h4>What Went Wrong?</h4>
-  <p>Programmers did not do a good job documenting their data for designers.</p>
-  <h4>When did it Happen?</h4>
-  <p>AAA</p>
-  <h4>Who owns it?</h4>
-  <p>AAA</p>
-  <h4>Lessions learned?</h4>
-  <p>AAA</p>
-  <h4>Resolutions</h4>
-  <p>AAA</p>
-</details>
-
-<!-- Technical Debt -->
-<details markdown="1">
-  <summary class="summary-header">Technical Debt <summarysmall>(Click to reveal)</summarysmall></summary>
-  <h4>What Went Wrong?</h4>
-  <p>Cobbling together from old does not make a good new.</p>
-  <h4>When did it Happen?</h4>
-  <p>AAA</p>
-  <h4>Who owns it?</h4>
-  <p>AAA</p>
-  <h4>Lessions learned?</h4>
-  <p>AAA</p>
-  <h4>Resolutions</h4>
-  <p>AAA</p>
+…function that wraps the call, which enables printing a warning on development builds to the console to inform programmers/designers of when an upgrade fails, which building it failed on, and for what reason. Isn’t that nice?
 </details>
 
 <!-- Feature Creep -->
 <details markdown="1">
   <summary class="summary-header">Feature Creep <summarysmall>(Click to reveal)</summarysmall></summary>
-  <h4>What Went Wrong?</h4>
-  <p>Publisher demands? Poor wording in initial contract? Maybe omit?</p>
-  <h4>When did it Happen?</h4>
-  <p>AAA</p>
-  <h4>Who owns it?</h4>
-  <p>AAA</p>
-  <h4>Lessions learned?</h4>
-  <p>AAA</p>
-  <h4>Resolutions</h4>
-  <p>AAA</p>
-</details>
 
-<!-- Planning -->
-<details markdown="1">
-  <summary class="summary-header">Planning <summarysmall>(Click to reveal)</summarysmall></summary>
   <h4>What Went Wrong?</h4>
-  <p>Did we even do this?</p>
+
+  Due to the wording in the contract between the publisher and ECG on Braves, features proposed by the publisher were required to be a part of the game without affecting the timeline.
+
   <h4>When did it Happen?</h4>
-  <p>AAA</p>
+
+  Consistently throughout development.
+
   <h4>Who owns it?</h4>
-  <p>AAA</p>
-  <h4>Lessions learned?</h4>
-  <p>AAA</p>
+
+  Leadership and Project Management.
+
+  <h4>Lessons learned?</h4>
+
+  Unfortunately, I was not involved in the communications between the publisher and studio and do not have enough information to properly address the lessons learned. But I can glean much from the handling of feature creep. And this is apparent to me:
+
+  - No is a powerful word that must be invoked when requests are made outside the scope of the project.
+  - When additions or removals are made to a project, the deadlines should be appropriately modified to reflect them.
+  - Evaluating additions to the project is time taken away from the project. That loss should not be neglected; rather, it should be included.
+  - Setting clear boundaries on what a project is meant to be. The GDD/Game Treatment is your bible and guiding light. Altering it must be done with care.
+  - *“BioWare Magic”* is not real. You cannot materialize features out of the ether. No matter what a team says, no work is free.
+  - Be wary of referencing other games in contracts or as minimum targets. Attempting to re-create another game instead of crafting your own will inevitably lead to the creeping of features you weren’t aware of when assessing other products.
+
   <h4>Resolutions</h4>
-  <p>AAA</p>
+
+  Renegotiate the current contractual obligations to be something achievable. Sometimes it becomes apparent that it will be impossible to fulfill a contract in a way that is satisfactory. When this occurs, you should be ready to enter into negotiations. Failing is often worse than underdelivering on the original idea. Ideally, you can pivot into something else at a lower cost.
+
+  As a programmer, I don’t always have a say in the choice of features in a game. However, pushing back on new features is a good way to prevent creep. Sometimes a designer gets a little overzealous and this mitigates the “want to haves” in a game.
+
+  Cutting parts of or entire other features is another way to create room in a schedule to permit some feature creep. Use sparingly.
+
+  Allocating more resources or granting additional time to fulfill new features is required when adding new features. Get real, if you can’t find the time, then it gets cut.
 </details>

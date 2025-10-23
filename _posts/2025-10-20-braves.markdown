@@ -131,7 +131,7 @@ Now with all that out of the way. There are many many individual things to do po
   <h4>Resolutions</h4>
   <p>It should be a company policy to properly document ones work in code and in intermediate formats anywhere a designer or other person is likely to make changes. For things like versioning software and releases it should be required to write patch notes or logs of what changes have occured.</p>
   <h4>Personal Remarks</h4>
-  As a professional I make every effort when programming to ensure that the code I write is error free and understandable. This includes documentation both in and outside of code. As such I wish to give an examples of good documentation from Braves. Let's take this function call.
+  As a professional I make every effort when programming to ensure that the code I write is error free and understandable. This includes documentation both in and outside of code. I advocated for better documentation on Braves but fear it fell on deaf ears. Or perhaps I needed to make a greater push for it. Regardless, I wish to give an examples of good documentation from Braves. Let's take this function call.
 
 ```c#
 private bool CanUpgrade(out ECheckUpgradeMask detailedResult, 
@@ -144,18 +144,25 @@ private bool CanUpgrade(out ECheckUpgradeMask detailedResult,
 
 ```c#
 /// <summary>
-/// Preforms a general check to see if this building is upgradable. Respects whether or not it is selectable + costs + any other requirements.
-/// Also checks to see if the next upgrade is even valid...<br><br></br></br>Use the <paramref name="mask"/> parameter to opt out of 
-/// checking specific requirements.
+/// Preforms a general check to see if this building is upgradable. Respects whether
+/// or not it is selectable + costs + any other requirements.
+/// Also checks to see if the next upgrade is even valid...<br><br></br></br>Use the
+/// <paramref name="mask"/> parameter to opt out of checking specific requirements.
 /// </summary>
 /// <param name="detailedResult">
-/// Mask matching any check that would cause this to return false. detailedResult is <see cref="ECheckUpgradeMask.None"/> when the return value is true.
+/// Mask matching any check that would cause this to return false. detailedResult is
+/// <see cref="ECheckUpgradeMask.None"/> when the return value is true.
 /// </param>
 /// <param name="mask">
-/// Optional mask to specify which checks you want to preform. Sometimes, UI will only want to check specific relevent things.
-/// <br></br>E.g. would this be upgradable excluding building costs? (Usefull when using premium currencey instead of normal costs)
+/// Optional mask to specify which checks you want to preform. Sometimes, UI will 
+/// only want to check specific relevent things. <br></br>E.g. would this be 
+/// upgradable excluding building costs? (Usefull when using premium currencey
+/// instead of normal costs)
 /// </param>
-/// <returns>True if the user should be able to upgrade this building in reference to the given mask. False otherwise.</returns>
+/// <returns>
+/// True if the user should be able to upgrade this building in reference
+/// to the given mask. False otherwise.
+/// </returns>
 private bool CanUpgrade(out ECheckUpgradeMask detailedResult, 
                         ECheckUpgradeMask mask = ECheckUpgradeMask.MaskAll)
 ```
@@ -164,7 +171,8 @@ private bool CanUpgrade(out ECheckUpgradeMask detailedResult,
 
 ```c#
 /// <summary>
-/// Enum mask for <see cref="CanUpgrade"/> which allows you to make precise checks based on your senario. Typical senarios such as:<br></br>
+/// Enum mask for <see cref="CanUpgrade"/> which allows you to make precise checks
+/// based on your senario. Typical senarios such as:<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskAll"/>,<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskInstant"/>,<br></br>
 ///  - <see cref="ECheckUpgradeMask.MaskRush"/><br></br>
@@ -208,15 +216,25 @@ public enum ECheckUpgradeMask : int
 }
  ```
 
-  Not only does the comments around the masks and bitmask portions tell you exactly what they're ment to do, but they also use references to other data structures and functions. There are useful to other programmers because they can use a **Find All References/Find Signature** refactoring operation in their <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to see the code that is being refered to by the comment.
+  Not only do the comments around the masks and bitmask portions tell you exactly what they're meant to do but, they also use references to other data structures and functions. There are useful to other programmers because they can use a **Find All References/Find Signature** refactoring operation in their <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to see the code that is being refered to by the comment.
 
-  Good documentation makes it easy to understand the intent of the author AND provides the information nessesary to change it. All that to say it should be plainly obvious to other programmers that
+  Good documentation makes it easy to understand the intent of the author AND provides the information nessesary to change it. All that to say it should be plainly obvious to other programmers that...
 
 ```c#
 if (building.CanUpgrade(out _, ECheckUpgradeMask.PremiumCost)) { ... }
 ```
 
-  Is checking to see if a building is upgradable with ONLY the games premium currencey and is ignoring any other game state factors.
+  ...is checking to see if a building is upgradable with ONLY the games premium currencey and is ignoring any other game state factors.
+
+  Oh and as one final note you might've seen that the can upgrade call is private. That's because there is a...
+
+```c#
+public bool CanUpgrade(out ECheckUpgradeMask detailedResult, 
+                      ECheckUpgradeMask mask = ECheckUpgradeMask.MaskAll,
+                      bool logFailures = true)
+```
+
+...function that wraps the call which prints a warning on development builds to the console to inform programmers/designers of when an upgrade fails, which building it failed on, and for what reason. Isn't that nice?
 </details>
 
 <!-- System Communication -->

@@ -66,15 +66,7 @@ In the final two years of my tenure after the full release of Vox Machinae the l
   <img src="/assets/images/voxmachinae/vm18.jpg" alt="">
 </div>
 
-# More Details Below
-Read on if you'd like to:
-<ul>
-  <li>Know more about how I design game features.</li>
-  <li>Get technical details.</li>
-  <li>You like reading a lot of text.</li>
-</ul>
-
-## Game Mode - Convoy.
+## Game Mode - Convoy
 
 Convoy was the first multiplayer mode that I developed. The vision for this mode was to create a repeatable escort style co-operative mission that could be played on **any map**. 
 
@@ -96,7 +88,7 @@ The mortar as a weapon was designed to fit the fantasy of long range artillery a
 
 This is in the same realm of philosophy as first-person shooters, where the game indicates where damage originates from to eliminate player confusion. In Vox, there are several ways we indicate where damage comes from. Primarily, we use spatial audio sources using impact locations to aid with this. We also simulate the impact in the cockpit with visual elements shaking in relation to the strength and location of a hit. The mortar has the addition of both its projectiles appearing on the player’s radar and a slowly traversed firing arc that is both low enough to be within the player's periphery and gives ample time for the player to access and react to the incoming threat.
 
-### Coding/Netcode.
+### Coding/Netcode
 
 In order to facilitate the above behaviour, the Aftershock needed specialized firing/arcing logic. We use our own proprietary networking solution for complete control over how we trigger this to occur over the network. Due to the nature of network programming and the latency associated with it, I had to get creative. There is only one thing that is known when a projectile is fired in Vox. That is, the target position of the reticle of the person who fired it.
 
@@ -106,7 +98,7 @@ In this video, you can see how the behaviour of the projectile changes based on 
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/6taoPtc4JaQ?si=Z9DpUgLCUAdGibfj&autoplay=0&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Engine - Unity PhysX Replacement.
+## Engine - Unity PhysX Replacement
 
 The largest and most challenging task I was ever given was to replace the physics engine in Unity with our own version of PhysX compiled from Nvidia’s source code with a custom shader. This was needed because Unity made one very specific thread joining call that blocks the main render thread, causing a frame stutter when targeting the high frame rates that Vox needed to hit. (90fps on PCVR and 72 on Meta Quest) Frame stutters are **intolerable** in VR games, as even micro stutters that are not easily perceptible will, over time, induce motion sickness in players.
 
@@ -125,9 +117,9 @@ One of the main blockers to launching Vox on Meta Quest was getting the complete
 
 It was my responsibility to find a way to super compress the textures and index them such that the textures could be efficiently streamed into memory. We did this in a few ways.
 
-- Identify the desired texture format in memory. In our case, this was typically <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format">BC7</a> or <a href="https://wikis.khronos.org/opengl/ASTC_Texture_Compression">ASTC4x4</a>.</li>
-- Find a way to super-compress these formats. Standard Unity projects will use their own <a href="https://unity.com/blog/engine-platform/crunch-compression-of-etc-textures">crunch compression</a>. This was insufficient for us as the files would not be bundled into an obb and, at the time, Unity did not provide a solution to this. Instead, we used the <a href="https://github.com/BinomialLLC/basis_universal">basis universal</a> format, which I would highly recommend looking at if you need to bring your game size down.</li>
-- Added a lookup hash table in the header of the extension file to enable fast O(n) lookups of textures.</li>
+- Identify the desired texture format in memory. In our case, this was typically <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format">BC7</a> or <a href="https://wikis.khronos.org/opengl/ASTC_Texture_Compression">ASTC4x4</a>.
+- Find a way to super-compress these formats. Standard Unity projects will use their own <a href="https://unity.com/blog/engine-platform/crunch-compression-of-etc-textures">crunch compression</a>. This was insufficient for us as the files would not be bundled into an obb and, at the time, Unity did not provide a solution to this. Instead, we used the <a href="https://github.com/BinomialLLC/basis_universal">basis universal</a> format, which I would highly recommend looking at if you need to bring your game size down.
+- Added a lookup hash table in the header of the extension file to enable fast O(n) lookups of textures.
 
 I then created a custom orchestrator to push textures and models through a complex pipeline that would output these textures to a repository for each target platform.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Vox Machinae (2022)"
+title:  Vox Machinae (2022) - Jared's Developer Portfolio
 date:   2025-10-17 00:00:00 -0000
 categories: projects
 permalink: /posts/voxmachinae/

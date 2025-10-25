@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ROOT"
+title: Jared's Developer Portfolio
 permalink: /
 ---
 <!-- 

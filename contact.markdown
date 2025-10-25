@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: Contact - Jared's Developer Portfolio
 permalink: /contact/
 ---
 <style>

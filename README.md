@@ -1,6 +1,6 @@
 # azurelyte.github.io
 
-Hello there! This is my (Jared's) public repository for a static site using the github pages jekyll and ruby workflow. You probably don't want this is you happened upon this repo by chance and are probably looking for this: https://docs.github.com/en/pages/quickstart 
+Hello there! This is my (Jared's) public repository for a static site using the github pages jekyll and ruby workflow. You probably don't want this. if you happened upon this repo by chance and are probably looking for this: https://docs.github.com/en/pages/quickstart 
 
 ## Getting Started
 

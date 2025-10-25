@@ -6,11 +6,11 @@ permalink: /about/
 
 Hello, I am Jared. A professional Game Developer with over 6 years of commercial experience developing games.
 
-Creating exceptional game experiences that bring joy and entertainment to people is my passion. I love to focus on the intrinsic motivators of game design and bring those to the forefront of gameplay.
+Creating exceptional game experiences that bring joy and entertainment to people is my passion. I focus on the intrinsic motivators of game design and bring those to the forefront of gameplay. I love to play with the joy of discovery and intertwine it with the innate human desire to find solutions. Thereby creating exceptional and unforgettable moments.
 
 I have a background in Computer Science/Programming and a successful history of working on Designing Game Features, Scripting, Network/Multithreaded Programming, Texture/Build Pipelines, and VR.
 
-I enjoy both creating games and playing a wide variety of them. Some favourites include Dwarf Fortress, Elden Ring, Baldur's Gate 3, Factorio, Terraria, DS3, Total War: Warhammer, Old School Runescape, Skyrim, Vermintide, Dragon's Dogma, and many, many more.
+I enjoy both creating games and playing a wide variety of them. Some favourites include Dwarf Fortress, Elden Ring, Baldur's Gate 3, Factorio, Terraria, DS3, Total War: Warhammer, Old School Runescape, Skyrim, Vermintide, Dragon's Dogma, and myriad more.
 
 <img src="/assets/images/self.png" alt="" style="width:100%">
 
@@ -22,15 +22,15 @@ Okanagan College's BCIS degree focuses on developing practical/applied programmi
 
 ## Work History
 
-### Game Developer on Braves, Nov 2024 - Aug 2025 (9 months)
+### Senior Game Developer on Braves, Nov 2024 - Aug 2025 (9 months)
 
 Studio: <a href="https://www.emeraldcitygames.ca/">**Emerald City Games (ECG)**</a>
 
 <a href="/posts/braves/">Braves Project Page</a>
 
-Jared worked with ECG as a game developer on Braves. Initially, his role was to work across teams to create the base building features of a 4X mobile game.
+Jared worked with ECG as a game developer on Braves. Initially, his role was to work across teams to create the base-building features of a 4X mobile game.
 
-Later on, Jared continued on code, write/assign tasks, and mentor other programmers in a senior capacity. 
+Later on, Jared continued to code, write/assign tasks, and mentor other programmers in a senior capacity. 
 
 ### Gameplay/Principal Programmer on Vox Machinae, Apr 2019 - May 2024 (5 years 2 months)
 

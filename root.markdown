@@ -9,10 +9,10 @@ permalink: /
 <!-- 
 ROOT should never be accessed by the user. We would normally redirect to the index/home page, but we will use the about page for now.
 -->
-<!-- <meta http-equiv="refresh" content="0; url=/about/" />
+<meta http-equiv="refresh" content="0; url={{ site.url }}/about/" />
 <script type="text/javascript">
     window.location.href="/about/"
-</script> -->
+</script>
 <p>
 Hello there. You should be automatically redirected to the about page. If this does not occur, please click <a href="/about/">here</a>.
 </p>

@@ -10,7 +10,7 @@ permalink: /index/
 Index is the place for the home page but, since I don't have a blog or much content, let's just redirect and use the About page as 
 our landing page.
 -->
-<meta http-equiv="refresh" content="0; url=/about/" />
+<meta http-equiv="refresh" content="0; url={{ site.url }}/about/" />
 <script type="text/javascript">
     window.location.href="/about/"
 </script>
